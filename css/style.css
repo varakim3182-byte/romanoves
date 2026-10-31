@@ -1,0 +1,225 @@
+/* ===== Общие стили страницы ===== */
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #222;
+    background-color: #f5f0e6;
+}
+
+/* ===== Шапка ===== */
+header {
+    background-color: #7a1f2b;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+h1 {
+    margin: 0 0 10px 0;
+    font-size: 48px;
+}
+
+header p {
+    margin: 0;
+    font-size: 24px;
+}
+/* ===== Контейнер ===== */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ===== Секция "О династии" ===== */
+.about h2 {
+    margin-top: 0;
+    color: #7a1f2b;
+    font-size: 32px;
+}
+/* ===== Две колонки: картинка + текст ===== */
+.about {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.about__col {
+    flex: 1;
+}
+
+.about img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+/* ===== Карточки ===== */
+.cards {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* 4.3: только ПРЯМЫЕ дети .cards, у которых есть класс card */
+.cards > .card {
+    flex: 1;
+    background-color: white;
+    border: 2px solid #d8cdb8;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+/* 4.1: элемент, у которого есть И card, И card--featured */
+.card.card--featured {
+    border-color: #7a1f2b;
+    background-color: #fff8f0;
+}
+
+.card__img-wrap img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.card__title {
+    margin: 15px 0 8px 0;
+    color: #7a1f2b;
+    font-size: 22px;
+}
+
+.card__text {
+    margin: 0;
+    font-size: 16px;
+}
+/* 4.8: relative, сдвиг от своего обычного места */
+.card.card--featured {
+    border-color: #7a1f2b;
+    background-color: #fff8f0;
+    position: relative;
+    top: -12px;
+}
+/* 4.9: родитель = relative, плашка внутри = absolute */
+.card__img-wrap {
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #7a1f2b;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+/* ===== 4.5: строчные элементы ===== */
+.accent {
+    color: #7a1f2b;
+    font-weight: bold;
+}
+.link {
+    display: block;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #7a1f2b;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.link:hover {
+    background-color: #561520;
+}
+/* ===== Нижний блок ===== */
+.free {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: white;
+    border: 2px solid #d8cdb8;
+    border-radius: 8px;
+}
+
+.free h2 {
+    margin-top: 0;
+    color: #7a1f2b;
+}
+
+.free h3 {
+    margin: 25px 0 10px 0;
+    font-size: 20px;
+}
+
+/* 4.6: блочный div ведёт себя как строчный элемент */
+.event {
+    display: inline;
+    margin-right: 25px;
+    color: #561520;
+}
+/* 4.7: inline-block */
+.tag {
+    display: inline-block;
+    width: 130px;
+    margin: 8px 8px 8px 0;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #7a1f2b;
+    color: white;
+    border-radius: 20px;
+}
+/* ===== 4.10: фиксированные кнопки ===== */
+.fixed-btn {
+    position: fixed;
+    bottom: 20px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #7a1f2b;
+    color: white;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.fixed-btn--up {
+    right: 20px;
+}
+
+.fixed-btn--theme {
+    right: 130px;
+}
+
+.fixed-btn:hover {
+    background-color: #561520;
+}
+/* ===== Тёмная тема ===== */
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+    background-color: #1c1a17;
+    color: #e8e2d4;
+}
+
+body.dark .cards > .card,
+body.dark .free {
+    background-color: #2a2622;
+    border-color: #4a4238;
+}
+
+body.dark .card.card--featured {
+    background-color: #33261f;
+    border-color: #c0505f;
+}
+
+body.dark .about h2,
+body.dark .free h2,
+body.dark .card__title {
+    color: #e0707f;
+}
